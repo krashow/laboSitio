@@ -1,0 +1,381 @@
+:root {
+  --c1: #539FA2;
+  --c2: #72B1A4;
+  --c3: #ABCCB1;
+  --c4: #C4DBB4;
+  --c5: #D4E2B6;
+  --text: #26372E;
+  --white: #fff;
+}
+
+/* ===== BASE ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, var(--c1) 0%, var(--c2) 100%);
+  color: var(--text);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: linear-gradient(90deg, var(--c1), var(--c2));
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 25px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.logo h1 {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: white;
+  margin: 0;
+}
+
+.nav-menu a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.1rem;
+  transition: opacity 0.3s;
+  text-decoration: none;
+}
+
+.nav-menu a:hover {
+  opacity: 0.8;
+}
+
+.nav-icons button {
+  background: var(--c3);
+  border: none;
+  color: var(--text);
+  font-size: 18px;
+  padding: 8px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-icons button:hover {
+  background: var(--white);
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ===== INTRO BANNER ===== */
+.intro-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 25px auto;
+  max-width: 850px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.intro-img {
+  width: 160px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.intro-text h2 {
+  font-size: 1.5rem;
+  color: var(--white);
+  margin: 0 0 5px 0;
+}
+
+.intro-text p {
+  font-size: 0.95rem;
+  color: var(--white);
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* ===== TABS ===== */
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: none;
+  background: var(--white);
+  color: var(--text);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tab-btn.active {
+  background: var(--c1);
+  color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== CARD PRINCIPAL ===== */
+.card {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 520px;
+  padding: 20px;
+  text-align: left;
+  animation: fadeIn 0.8s ease;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.card-header small {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* ===== PROGRESO ===== */
+.progress-banner {
+  width: 100%;
+  height: 6px;
+  background: var(--c4);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px 0 15px 0;
+}
+
+.progress-inner {
+  width: 65%;
+  height: 100%;
+  background: var(--c1);
+  border-radius: 5px;
+  animation: grow 2s ease forwards;
+}
+
+/* ===== HÁBITOS ===== */
+.habits-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.habit-card {
+  background: var(--c5);
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.habit-card:hover {
+  transform: translateY(-2px);
+}
+
+.habit-card.completed {
+  background: var(--c3);
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+.habit-title {
+  font-weight: 500;
+}
+
+/* ===== BOTONES DE PIE ===== */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 500;
+  background: var(--white);
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
+
+.action-btn i {
+  margin-right: 5px;
+}
+
+.action-btn:hover {
+  background: var(--c4);
+}
+
+.action-btn.delete {
+  background: #e74c3c;
+  color: white;
+}
+
+/* ===== FOOTER ===== */
+.footer-info {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(90deg, var(--c1), var(--c2));
+  color: white;
+  margin-top: auto;
+  border-top: 2px solid var(--c3);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+  opacity: 0.8;
+}
+
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 450px;
+  border-top: 6px solid var(--c1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.4s ease;
+}
+
+#habitForm input,
+#habitForm textarea,
+#habitForm select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--c3);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+#cancelBtn {
+  background: var(--c4);
+}
+
+.btn-primary {
+  background: var(--c1);
+  color: white;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 65%;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .intro-banner {
+    flex-direction: column;
+  }
+
+  .intro-img {
+    margin: 0 0 15px 0;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .action-btn {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+}

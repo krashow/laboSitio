@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HabitFlow - Control de Hábitos</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="imagen1.png"Logo de hábitos" />
+      <h1>HABITFLOW</h1>
+    </div>
+    <nav class="nav-menu">
+      <a href="#"><i class="fa-solid fa-house"></i></a>
+      <a href="#"><i class="fa-solid fa-chart-line"></i></a>
+      <a href="#"><i class="fa-solid fa-gear"></i></a>
+    </nav>
+    <div class="nav-icons">
+      <button id="newHabitBtn" title="Nuevo hábito"><i class="fa-solid fa-plus"></i></button>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container">
+    <section class="intro-banner">
+      <img src="imagen2.png" alt="Hábitos saludables" class="intro-img" />
+      <div class="intro-text">
+        <h2>Construye Rutinas Positivas</h2>
+        <p>Monitorea tus hábitos diarios y alcanza tus metas con constancia y motivación.</p>
+      </div>
+    </section>
+
+    <section class="tabs">
+      <!-- Corregido: usar "filter-btn" en lugar de "tab-btn" -->
+      <button class="filter-btn active" data-filter="all">All Tasks</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+      <button class="filter-btn" data-filter="today">Today</button>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2>DAILY HABITS</h2>
+        <small>Tu progreso personal cada día cuenta</small>
+      </div>
+
+      <!-- decorativo: gráfico de relleno -->
+      <div class="progress-banner">
+        <div class="progress-inner"></div>
+      </div>
+
+      <div id="habitsList" class="habits-container">
+        <!-- Hábitos generados dinámicamente -->
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER INFORMATIVO -->
+  <footer class="footer-info">
+    <div class="footer-links">
+      <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    </div>
+    <p>© 2025 HABITFLOW · Creando disciplina cada día</p>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="habitModal" class="modal">
+    <div class="modal-content">
+      <h3 id="modalTitle"><i class="fa-solid fa-leaf"></i> Nuevo Hábito</h3>
+      <form id="habitForm">
+        <input type="text" id="habitTitle" placeholder="Nombre del hábito" required />
+        <textarea id="habitDescription" placeholder="Descripción o meta"></textarea>
+        <select id="habitFrequency" required>
+          <option value="">Frecuencia</option>
+          <option value="diario">Diario</option>
+          <option value="semanal">Semanal</option>
+          <option value="mensual">Mensual</option>
+        </select>
+        <div class="modal-actions">
+          <button type="button" id="cancelBtn"><i class="fa-solid fa-xmark"></i> Cancelar</button>
+          <button type="submit" class="btn-primary"><i class="fa-solid fa-check"></i> Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
